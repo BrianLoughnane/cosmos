@@ -1,0 +1,89 @@
+* {
+	outline: 1px dotted red;
+	overflow: hidden;
+}
+
+body {
+	background: url("galaxy.jpg") 0px 60px no-repeat;
+	background-size: cover;
+	background-color: black;
+	background: none;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+	font-size: 200%;
+	color: white;
+	color: black;
+}
+
+/*
+============================================
+Header
+============================================
+*/
+
+header {
+	background: url("cosmos.png") 0px -24px no-repeat;
+	background-size: 31%;
+	background-color: black;
+	font-size: 280%;
+	color: white;
+}
+
+header div {
+	display: inline-block;
+	float: right;
+	margin: 3% 0%;
+}
+
+header div:first-child {
+	margin-left: 12%;
+	margin-right: 6%;
+}
+
+/*
+============================================
+Section - Question
+============================================
+*/
+
+section>div {
+	display: inline-block;
+	width: 50%;
+	min-height: 500px;
+	float: left;
+}
+
+section>div:first-child {
+
+}
+
+li {
+	text-decoration: none;
+}
+
+/*
+============================================
+Section - Answer
+============================================
+*/
+
+.answer h1 {
+	text-align: center;
+}
+
+.answer>span {
+	display: block;
+	width: 75%;
+	margin: auto;
+}
+
+.answer div {
+	text-align: center;
+}
+
+span.next {
+	display: inline-block;
+	width: 30%;
+	margin-left: 10%;
+	text-align: center;
+}
+
