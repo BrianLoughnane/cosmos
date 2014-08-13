@@ -90,11 +90,20 @@ li {
 	background-size: contain;
 }
 
+li:hover {
+	cursor: pointer;
+	color: orange;
+}
+
 /*
 ============================================
 Section - Answer
 ============================================
 */
+
+section>div:nth-child(2) {
+	display: none;
+}
 
 .answer {
 	font-size: 150%;
