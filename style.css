@@ -88,7 +88,7 @@ li {
 	font-size: 200%;
 	padding-left: 25%;
 	background: url("cosmos.jpg") no-repeat;
-	background-size: contain;
+	background-size: 20%;
 }
 
 li:hover {
