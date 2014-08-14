@@ -1,6 +1,7 @@
 $(document).ready(function(){
-	// event.stopPropagation();
-	// event.preventDefault();
+
+$("body").css("background-size", "130%");
+$("body").css("background-position", "-100px -100px");
 
 // =======================================
 // Question Class Constructor
@@ -14,7 +15,7 @@ function Question(question, op1, op2, op3, op4, op5, correct, description) {
 	this.op4 = op4;
 	this.op5 = op5;
 	this.correct = correct;
-	this.desctiption = description;
+	this.description = description;
 };
 
 
@@ -52,14 +53,20 @@ function askQuestion(qIndex) {
 }
 
 
+function newGame() {
+	count = 0;
+	score = 0;
+	quesNum = 1;
 
+	$(".total").text(quiz.length);
+	$(".score").text(score);
+	$(".quesNum").text(1);
 
-var count = 0;
+	askQuestion(count);
+}
 
-var score = 0;
-var quesNum = 1;
+newGame();
 
-askQuestion(count);
 
 $("section")
 .on("click", "li", function(event) {
@@ -80,12 +87,15 @@ $("section")
 
 	$(".yourAns").text(yourAnswer);
 	$(".correctAns").text(correct);
-	$(".answer p").text(quiz[count].desctiption);
+	$(".answer p").text(quiz[count].description);
 	$(".score").text(score);
 
 	$(".question").fadeOut("slow");
 	$(".answer").delay(900).fadeIn("slow");
 	// evaluateAnswer(count);
+
+	
+
 	}
 );
 
@@ -101,9 +111,33 @@ $("section")
 		quesNum++;
 		$(".quesNum").text(quesNum);
 	} else {
-		alert("the game is over");
+		// alert("the game is over");
+		// if(count === quiz.length) {
+		$(".answer").fadeOut("slow");
+		$(".playAgain").delay(900).fadeIn("slow");
+
+		if(score === 0 || score === 1 || score === 2) {
+			$(".playAgain h1").text("Ouch").css("color","red");
+		} else if (score === 3 || score === 4) {
+			$(".playAgain h1").text("Good Job!").css("color","orange");
+		} else {
+			$(".playAgain h1").text("YOU'RE A COSMIC GENIUS").css("color","green");
+		}
 	}
 
+	}
+);
+
+
+$("section")
+.on("click", ".playAgainButton", function(event) {
+	event.stopPropagation();
+	event.preventDefault();
+
+	newGame();
+
+	$(".playAgain").fadeOut("slow");
+	$(".question").delay(900).fadeIn("slow");
 	}
 );
 
