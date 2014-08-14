@@ -26,11 +26,11 @@ function Question(question, op1, op2, op3, op4, op5, correct, description) {
 
 var quiz = new Array();
 
-quiz[0] = new Question("What's the tallest mountain in the world?", "Mt. Hood", "Mt. Kilimanjaro", "Mt. Sinai", "Mt. Everest", "Mt. Rushmore", "Mt. Everest", "this is question number 1")
-quiz[1] = new Question("Which number comes first?", "1", "2", "3", "4", "5", "1", "this is question number 2");
-quiz[2] = new Question("This is question number 3?", "1", "2", "3", "4", "5", "3", "this is question number 3");
-quiz[3] = new Question("This is question number 4?", "1", "2", "3", "4", "5", "4", "this is question number 4");
-quiz[4] = new Question("This is question number 5?", "1", "2", "3", "4", "5", "5", "this is question number 5");
+quiz[0] = new Question("The only animal on earth to survive all 5 major extinctions", "Alligator", "Shark", "Ant", "Tartigrade", "Amoeba", "Tartigrade", "\"You've probably never noticed them because they're so small, about the size of a pinpoint, but they're tough...they've been in business for half a billion years. We used to think that life was finicky...but we were wrong\"");
+quiz[1] = new Question("If we scaled the entire timeline of the cosmos to a calendar year (big bang 'til present day), the entire recorded history of human life would be...", "2 months", "22 days", "8 hours", "8 minutes", "14 seconds", "14 seconds", "\"Every person you’ve ever heard of lies right in there. All those kings and battles, migrations and inventions, wars and loves, every thing in the history books happened here in the last 14 seconds of the cosmic calendar\"");
+quiz[2] = new Question("How long does it take light to cross the Milky Way Galaxy?", "100,000 years", "10 years", "1 year", "5 days", "3 hours", "100,000 years", "\"It would take light, the fastest thing there is, 100,000 years\"");
+quiz[3] = new Question("Volcanoes erupt 500 million tons of CO2 into the atmosphere each year.  How much more CO2 than that do humans emit?", "2x as much", "5 times as much", "10 times as much", "20 times as much", "50 times as much", "50 times as much", "\"That's not even 2% of the 30 billion tons of CO2 that our civilization is cracking out every year\"");
+quiz[4] = new Question("Every time you breathe, you're inhaling how many molecules?", "1", "2", "3", "4", "5", "5", "this is question number 5");
 
 console.log(quiz[0].question);
 
