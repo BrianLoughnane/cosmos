@@ -4,16 +4,22 @@ $("body")
 .css("background-size", "130%")
 .css("background-position", "-100px -100px");
 
-$(".planet")
-.delay(3000)
-.animate({left:"110%"}, 800, "linear", function() {
-	$(this).css("left", "-20%")
-	}
-);
+$("body")
+.css("background-size", "130%")
+.css("background-position", "-100px -100px");
 
-$(".question")
-.delay(4500)
-.animate({left:"15%"}, 800);
+// $(".planet")
+// .delay(3000)
+// .animate({left:"110%"}, 800, "linear", function() {
+// 	$(this).css("left", "-20%")
+// 	}
+// );
+
+// $(".question")
+// .delay(4500)
+// .animate({left:"15%"}, 800);
+
+
 // .css("display", "inline-block");
 
 // =======================================
@@ -73,6 +79,19 @@ function newGame() {
 	$(".quesNum").text(1);
 	
 	askQuestion(count);
+
+	$(".planet")
+	.delay(3000)
+	.animate({left:"110%"}, 800, "linear", function() {
+		$(this).css("left", "-20%")
+		}
+	);
+
+	$(".question")
+	.delay(4500)
+	.animate({left:"15%"}, 800);
+
+
 
 }
 
@@ -198,31 +217,6 @@ $("section")
 	}
 
 	}
-
-	// $(".answer")
-	// .delay(400)
-	// .animate({left:"115%"}, 800,
-	// 	function() {
-	// 		$(this).css("left", "-75%");
-	// 	}
-	// );
-
-
-	// // $(".question").fadeOut("slow");
-	// $(".question")
-	// .show()
-	// .delay(1200)
-	// .animate({left:"15%"}, 800
-	// );
-
-	// $(".planet")
-	// .delay(3000)
-	// .animate({left:"110%"}, 800, 
-	// 	function() {
-	// 		$(this).css("left", "-20%");
-	// 	}
-	// );
-	
 	
 );
 
@@ -235,8 +229,26 @@ $("section")
 
 	newGame();
 
-	$(".playAgain").fadeOut("slow");
-	$(".question").delay(900).fadeIn("slow");
+	$(".playAgain")
+		// .show()
+	.delay(400)
+	.animate({left:"115%"}, 800,
+		function() {
+			$(this).css("left", "-75%");
+		}
+	);
+
+	newGame();
+
+	// $(".playAgain")
+	// .show()
+	// .delay(2000)
+	// .animate({left:"15%"}, 800
+	// );
+
+
+	// $(".playAgain").fadeOut("slow");
+	// $(".question").delay(900).fadeIn("slow");
 	}
 );
 
