@@ -1,12 +1,10 @@
 $(document).ready(function(){
 
-$("body")
-.css("background-size", "130%")
-.css("background-position", "-100px -100px");
+// $("body")
+// .css("background-size", "130%")
+// .css("background-position", "-100px -100px");
 
-$("body")
-.css("background-size", "130%")
-.css("background-position", "-100px -100px");
+
 
 // $(".planet")
 // .delay(3000)
@@ -20,7 +18,6 @@ $("body")
 // .animate({left:"15%"}, 800);
 
 
-// .css("display", "inline-block");
 
 // =======================================
 // Question Class Constructor
@@ -57,8 +54,6 @@ quiz[4] = new Question("Every time you breathe, you're inhaling how many molecul
 // ======================================================
 
 function askQuestion(qIndex) {
-	// $(".answer").fadeOut("slow");
-	// $(".question").delay(900).fadeIn("slow");
 	$(".question p").text(quiz[qIndex].question);
 	$(".question li:first-child").text(quiz[qIndex].op1);
 	$(".question li:nth-child(2)").text(quiz[qIndex].op2);
@@ -70,6 +65,7 @@ function askQuestion(qIndex) {
 
 
 function newGame() {
+
 	count = 0;
 	score = 0;
 	quesNum = 1;
@@ -77,147 +73,131 @@ function newGame() {
 	$(".total").text(quiz.length);
 	$(".score").text(score);
 	$(".quesNum").text(1);
-	
+
 	askQuestion(count);
 
 	$(".planet")
-	.delay(3000)
+	.delay(1200)
 	.animate({left:"110%"}, 800, "linear", function() {
 		$(this).css("left", "-20%")
 		}
 	);
 
 	$(".question")
-	.delay(4500)
-	.animate({left:"15%"}, 800);
-
-
+	.delay(2700)
+	.animate({left:"15%"}, 1000, "linear");
 
 }
 
-newGame();
 
 
 $("section")
-.on("click", "li", function(event) {
-	event.stopPropagation();
-	event.preventDefault();
-	
-	var correct = quiz[count].correct;
-	var yourAnswer = $(this).text();
+.on("click", "li", 
+	function(event) {
+		event.stopPropagation();
+		event.preventDefault();
+		
+		var correct = quiz[count].correct;
+		var yourAnswer = $(this).text();
 
-	if(yourAnswer === correct) {
-		console.log("correct!");
-		$(".answer h1").text("Correct").css("color", "green");
-		score++;
-	} else {
-		console.log("wrong answer");
-		$(".answer h1").text("Incorrect").css("color", "red");
-	}
-
-	$(".yourAns").text(yourAnswer);
-	$(".correctAns").text(correct);
-	$(".answer p").text(quiz[count].description);
-	$(".score").text(score);
-
-	$(".question")
-	.delay(400)
-	.animate({left:"115%"}, 800,
-		function() {
-			$(this).css("left", "-75%");
+		if(yourAnswer === correct) {
+			console.log("correct!");
+			$(".answer h1").text("Correct").css("color", "green");
+			score++;
+		} else {
+			console.log("wrong answer");
+			$(".answer h1").text("Incorrect").css("color", "red");
 		}
-	);
 
+		$(".yourAns").text(yourAnswer);
+		$(".correctAns").text(correct);
+		$(".answer p").text(quiz[count].description);
+		$(".score").text(score);
 
-	// $(".question").fadeOut("slow");
-	$(".answer")
-	.show()
-	.delay(1200)
-	.animate({left:"15%"}, 800
-	);
-	// .fadeIn("slow");
-	// evaluateAnswer(count);
+		$(".question")
+		.delay(400)
+		.animate({left:"115%"}, 800,
+			function() {
+				$(this).css("left", "-75%");
+			}
+		);
 
-	
+		$(".answer")
+		.show()
+		.delay(1200)
+		.animate({left:"15%"}, 800
+		);
 
 	}
 );
 
 $("section")
-.on("click", ".next", function(event) {
-	event.stopPropagation();
-	event.preventDefault();
+.on("click", ".next", 
+	function(event) {
+		event.stopPropagation();
+		event.preventDefault();
 
-	count++;
+		count++;
 
-	if(count < quiz.length) {
-		askQuestion(count);
-		quesNum++;
-		$(".quesNum").text(quesNum);
+		if(count < quiz.length) {
+			askQuestion(count);
+			quesNum++;
+			$(".quesNum").text(quesNum);
 
-		$(".answer")
-		// .show()
-		.delay(400)
-		.animate({left:"115%"}, 800,
-			function() {
-				$(this).css("left", "-75%");
-			}
-		);
+			$(".answer")
+			// .show()
+			.delay(400)
+			.animate({left:"115%"}, 800,
+				function() {
+					$(this).css("left", "-75%");
+				}
+			);
 
-		$(".question")
-		.show()
-		.delay(2000)
-		.animate({left:"15%"}, 800
-		);
+			$(".question")
+			.show()
+			.delay(2000)
+			.animate({left:"15%"}, 800
+			);
 
-		$(".planet")
-		.delay(1200)
-		.animate({left:"110%"}, 800, 
-			function() {
-				$(this).css("left", "-20%");
-			}
-		);
-	} else {
-		// alert("the game is over");
-		// if(count === quiz.length) {
-		// $(".answer").fadeOut("slow");
-		// $(".playAgain").delay(900).fadeIn("slow");
-
-		if(score === 0 || score === 1 || score === 2) {
-			$(".playAgain h1").text("Ouch").css("color","red");
-		} else if (score === 3 || score === 4) {
-			$(".playAgain h1").text("Good Job!").css("color","orange");
+			$(".planet")
+			.delay(1200)
+			.animate({left:"110%"}, 800, 
+				function() {
+					$(this).css("left", "-20%");
+				}
+			);
 		} else {
-			$(".playAgain h1").text("YOU'RE A COSMIC GENIUS").css("color","green");
+			if(score === 0 || score === 1 || score === 2) {
+				$(".playAgain h1").text("Ouch").css("color","red");
+			} else if (score === 3 || score === 4) {
+				$(".playAgain h1").text("Good Job!").css("color","orange");
+			} else {
+				$(".playAgain h1").text("YOU'RE A COSMIC GENIUS").css("color","green");
+			}
+
+			$(".answer")
+			.delay(400)
+			.animate({left:"115%"}, 800,
+				function() {
+					$(this).css("left", "-75%");
+				}
+			);
+
+			$(".playAgain")
+			.show()
+			.delay(2000)
+			.animate({left:"15%"}, 800
+			);
+
+			$(".planet")
+			.delay(1200)
+			.animate({left:"110%"}, 800, 
+				function() {
+					$(this).css("left", "-20%");
+				}
+			);
 		}
-
-		$(".answer")
-		// .show()
-		.delay(400)
-		.animate({left:"115%"}, 800,
-			function() {
-				$(this).css("left", "-75%");
-			}
-		);
-
-		$(".playAgain")
-		.show()
-		.delay(2000)
-		.animate({left:"15%"}, 800
-		);
-
-		$(".planet")
-		.delay(1200)
-		.animate({left:"110%"}, 800, 
-			function() {
-				$(this).css("left", "-20%");
-			}
-		);
-
-	}
-
-	}
-	
+	}	
 );
 
 
@@ -227,10 +207,7 @@ $("section")
 	event.stopPropagation();
 	event.preventDefault();
 
-	newGame();
-
 	$(".playAgain")
-		// .show()
 	.delay(400)
 	.animate({left:"115%"}, 800,
 		function() {
@@ -240,113 +217,18 @@ $("section")
 
 	newGame();
 
-	// $(".playAgain")
-	// .show()
-	// .delay(2000)
-	// .animate({left:"15%"}, 800
-	// );
-
-
-	// $(".playAgain").fadeOut("slow");
-	// $(".question").delay(900).fadeIn("slow");
 	}
 );
 
 
-
-
-// var count = 0;
-
-// for(var i=0; i<quiz.length; i++) {
-
-// 	askQuestion(count);
-
-// }
-
-// ======================================================
-// evaluateAnswer - Compares Clicked Line to Correct Line
-// ======================================================
-
-
-
-// function evaluateAnswer(question) {
-
-// 	// var correct = $(".question li")[0];
-// 	var correct = quiz[question].correct;
-
-// 	if($(this).text() === correct) {
-// 	// if(this === quiz[question].correct) {
-// 		console.log("correct!");
-		
-
-// 	} else {
-// 		console.log("wrong answer");
-
-// 	}
-
-// 	$(".question").fadeOut("slow");
-// 	$(".answer").delay(900).fadeIn("slow");
-
-
-// }
-
-// ======================================================
-// nextQuestion - combines askQuestion and evaluateAnswer
-// ======================================================
-
-
-// function nextQuestion(qIndex, correctAns) {
-// 	$(".answer").fadeOut("slow");
-// 	$(".question").delay(900).fadeIn("slow");
-// 	askQuestion(qIndex);
-// 	evaluateAnswer(correctAns);
-// }
-
-
-
-
-// ==========================================================
-// playGame - a series of calls to execute quiz in sequence
-// ==========================================================
-
-// function playGame() {
-// 	nextQuestion(0, 3);			
-// 	nextQuestion(1, 0);
-// 	nextQuestion(2, 1);
-// 	nextQuestion(3, 2);
-// 	nextQuestion(4, 3);			
-// }
-
-// playGame();
-
-// =======================================
-// Event Handlers
-// =======================================
-
-// var go = false;
-// var currentQ = 0;
-
-// $(".question li")
-// .on("click", function() {
-// 	go = false;
-// })
-
-// $(".next")
-// .on("click", function() {
-// 	go = true;
-// });
-
-
-
-// for(var i = 0; i < quiz.length; i++) {
-
-// 	nextQuestion(i, i);
-// 	currentQ++;
-
-// }
-
-
-
-
+$("body")
+.css("background-position", "-100px -100px")
+.animate(
+	{"background-size": "130%"}, 
+	1000, 
+	"linear"
+	, 
+	newGame
+);
 
 });
