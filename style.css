@@ -1,17 +1,12 @@
 * {
-	/*outline: 1px dotted red;*/
 	overflow: hidden;
 }
 
 body {
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	font-size: 200%;
-	/*background: url("galaxy.jpg") 0px 104px no-repeat;*/
 	background: url("galaxy.jpg") -10% -10% no-repeat;
-	/*background-size: cover;*/
-	/*background-size: 130%;*/
 	background-size: 10%;
-	/*background-size: 0;*/
 	background-color: black;
 	color: #ADF0F8;
 	-webkit-transition: all 3s 0.1s;
@@ -19,8 +14,6 @@ body {
 	-ms-transition: all 3s 0.1s;
 	-o-transition: all 3s 0.1s;
 	transition: all 3s 0.1s;
-	/*color: black;
-	background: none;*/
 }
 
 /*
@@ -34,7 +27,6 @@ header {
 	background-size: contain;
 	font-size: 120%;
 	color: #ADF0F8;
-	/*margin-bottom: 7%;*/
 }
 
 header div {
@@ -68,17 +60,13 @@ section {
 
 section>div {
 	display: inline-block;
-	/*width: 50%;*/
-	width: 100%;
-	float: left;
+	width: 70%;
 	background: rgba(0,0,0,0.8);
 	border: 0px solid black;
 	border-radius: 65%;
-	padding: 23%;
-/*	border-radius: 5%;
-	padding: 3%;*/
-	/*margin-left: 25.5%;*/
-	/*position: absolute;*/
+	padding: 12%;
+	left: -75%;
+	position: absolute;
 }
 
 section p, section h1 {
@@ -93,9 +81,6 @@ section div div span {
 	color: #ADF0F8;
 }
 
-/*section h1 {
-	color: ;
-}*/
 
 /*
 ============================================
@@ -110,7 +95,6 @@ Section - Planet
 	border-radius: 50%;
 	position: absolute;
 	left: -20%;
-	/*transition: all 2s 3s;*/
 }
 
 /*
@@ -119,11 +103,16 @@ Section - Question
 ============================================
 */
 
-
+ul {
+	width: 50%;
+	margin-left: 23%;
+}
 
 .question p {
 	font-size: 120%;
 	text-align: center;
+	width: 50%;
+	margin-left: 23%;
 }
 
 li {
@@ -144,10 +133,6 @@ li:hover {
 Section - Answer
 ============================================
 */
-
-/*.answer {
-	display: none;
-}*/
 
 .answer {
 	font-size: 150%;
@@ -176,12 +161,11 @@ Section - Answer
 }
 
 .next {
-	/*background: rgba(0,0,0,0.4);*/
 	padding: 0% 5%;
 	border: 0px solid #F6E498;
 	box-shadow: #DF6035 0px 0px 36px;
 	background: rgba(223,96,53,.5);
-	border-radius: 2px;
+	border-radius: 21px;
 	color: white;
 }
 
@@ -215,12 +199,11 @@ Section - Play Again
 }
 
 .playAgainButton {
-	/*background: rgba(0,0,0,0.4);*/
 	padding: 0% 5%;
 	border: 0px solid #F6E498;
 	box-shadow: #DF6035 0px 0px 36px;
 	background: rgba(223,96,53,.5);
-	border-radius: 2px;
+	border-radius: 21px;
 	color: white;
 	font-size: 200%;
 }
@@ -236,31 +219,8 @@ Section - Play Again
 }
 
 
-/*Planetary Prospecting*/
 
 
 
-section>div {
-	display: inline-block;
-	width: 70%;
-	/* width: 100%; */
-	/* float: left; */
-	background: rgba(0,0,0,0.8);
-	border: 0px solid black;
-	border-radius: 65%;
-	padding: 12%;
-	left: -75%;
-	position: absolute;
-}
 
-.question p {
-	font-size: 120%;
-	text-align: center;
-	width: 50%;
-	margin-left: 23%;
-}
 
-ul {
-	width: 50%;
-	margin-left: 23%;
-}
