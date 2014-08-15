@@ -161,8 +161,8 @@ $("section")
 	} else {
 		// alert("the game is over");
 		// if(count === quiz.length) {
-		$(".answer").fadeOut("slow");
-		$(".playAgain").delay(900).fadeIn("slow");
+		// $(".answer").fadeOut("slow");
+		// $(".playAgain").delay(900).fadeIn("slow");
 
 		if(score === 0 || score === 1 || score === 2) {
 			$(".playAgain h1").text("Ouch").css("color","red");
@@ -171,6 +171,30 @@ $("section")
 		} else {
 			$(".playAgain h1").text("YOU'RE A COSMIC GENIUS").css("color","green");
 		}
+
+		$(".answer")
+		// .show()
+		.delay(400)
+		.animate({left:"115%"}, 800,
+			function() {
+				$(this).css("left", "-75%");
+			}
+		);
+
+		$(".playAgain")
+		.show()
+		.delay(2000)
+		.animate({left:"15%"}, 800
+		);
+
+		$(".planet")
+		.delay(1200)
+		.animate({left:"110%"}, 800, 
+			function() {
+				$(this).css("left", "-20%");
+			}
+		);
+
 	}
 
 	}
