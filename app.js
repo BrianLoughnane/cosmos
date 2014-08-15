@@ -12,7 +12,6 @@ $(".planet")
 );
 
 $(".question")
-.show()
 .delay(4500)
 .animate({left:"15%"}, 800);
 // .css("display", "inline-block");
@@ -52,8 +51,8 @@ quiz[4] = new Question("Every time you breathe, you're inhaling how many molecul
 // ======================================================
 
 function askQuestion(qIndex) {
-	$(".answer").fadeOut("slow");
-	$(".question").delay(900).fadeIn("slow");
+	// $(".answer").fadeOut("slow");
+	// $(".question").delay(900).fadeIn("slow");
 	$(".question p").text(quiz[qIndex].question);
 	$(".question li:first-child").text(quiz[qIndex].op1);
 	$(".question li:nth-child(2)").text(quiz[qIndex].op2);
@@ -102,8 +101,22 @@ $("section")
 	$(".answer p").text(quiz[count].description);
 	$(".score").text(score);
 
-	$(".question").fadeOut("slow");
-	$(".answer").delay(900).fadeIn("slow");
+	$(".question")
+	.delay(400)
+	.animate({left:"115%"}, 800,
+		function() {
+			$(this).css("left", "-75%");
+		}
+	);
+
+
+	// $(".question").fadeOut("slow");
+	$(".answer")
+	.show()
+	.delay(1200)
+	.animate({left:"15%"}, 800
+	);
+	// .fadeIn("slow");
 	// evaluateAnswer(count);
 
 	
@@ -122,6 +135,29 @@ $("section")
 		askQuestion(count);
 		quesNum++;
 		$(".quesNum").text(quesNum);
+
+		$(".answer")
+		// .show()
+		.delay(400)
+		.animate({left:"115%"}, 800,
+			function() {
+				$(this).css("left", "-75%");
+			}
+		);
+
+		$(".question")
+		.show()
+		.delay(2000)
+		.animate({left:"15%"}, 800
+		);
+
+		$(".planet")
+		.delay(1200)
+		.animate({left:"110%"}, 800, 
+			function() {
+				$(this).css("left", "-20%");
+			}
+		);
 	} else {
 		// alert("the game is over");
 		// if(count === quiz.length) {
@@ -139,14 +175,28 @@ $("section")
 
 	}
 
+	// $(".answer")
+	// .delay(400)
+	// .animate({left:"115%"}, 800,
+	// 	function() {
+	// 		$(this).css("left", "-75%");
+	// 	}
+	// );
+
+
+	// // $(".question").fadeOut("slow");
+	// $(".question")
+	// .show()
+	// .delay(1200)
+	// .animate({left:"15%"}, 800
+	// );
+
 	// $(".planet")
 	// .delay(3000)
-	// .animate(
-	// 	{left:"110%"}, 
-	// 	800, 
+	// .animate({left:"110%"}, 800, 
 	// 	function() {
 	// 		$(this).css("left", "-20%");
-	// 	};
+	// 	}
 	// );
 	
 	

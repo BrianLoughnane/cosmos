@@ -1,5 +1,5 @@
 * {
-	outline: 1px dotted red;
+	/*outline: 1px dotted red;*/
 	overflow: hidden;
 }
 
@@ -105,7 +105,7 @@ Section - Planet
 .planet {
 	display: inline-block;
 	padding: 7%;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,0.6);
 	border-radius: 50%;
 	position: absolute;
 	left: -20%;
@@ -118,9 +118,7 @@ Section - Question
 ============================================
 */
 
-div.question {
-	display: none;
-}
+
 
 .question p {
 	font-size: 120%;
@@ -146,9 +144,9 @@ Section - Answer
 ============================================
 */
 
-.answer {
+/*.answer {
 	display: none;
-}
+}*/
 
 .answer {
 	font-size: 150%;
