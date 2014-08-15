@@ -1,5 +1,5 @@
 * {
-	/*outline: 1px dotted red;*/
+	outline: 1px dotted red;
 	overflow: hidden;
 }
 
@@ -39,13 +39,21 @@ header {
 header div {
 	display: inline-block;
 	float: right;
-	margin: 3% 0%;
+	margin: 3% 5%;
 }
 
 header div:first-child {
-	margin-left: 12%;
+	margin-left: 7%;
 	margin-right: 6%;
 }
+
+header div:nth-child(3) {
+	font-size: 180%;
+	color: red;
+	font-family: fantasy, futura, serif;
+	margin-top: 1.7%;
+}
+
 
 /*
 ============================================
@@ -90,19 +98,38 @@ section div div span {
 
 /*
 ============================================
+Section - Planet
+============================================
+*/
+
+.planet {
+	display: inline-block;
+	padding: 7%;
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 50%;
+	position: absolute;
+	left: -20%;
+	/*transition: all 2s 3s;*/
+}
+
+/*
+============================================
 Section - Question
 ============================================
 */
 
+div.question {
+	display: none;
+}
 
-section>div:first-child p {
-	font-size: 200%;
+.question p {
+	font-size: 120%;
 	text-align: center;
 }
 
 li {
 	text-decoration: none;
-	font-size: 200%;
+	font-size: 150%;
 	padding-left: 25%;
 	background: url("cosmos.jpg") no-repeat;
 	background-size: 20%;
@@ -119,7 +146,7 @@ Section - Answer
 ============================================
 */
 
-section>div:nth-child(2) {
+.answer {
 	display: none;
 }
 
@@ -142,6 +169,7 @@ section>div:nth-child(2) {
 
 .answer p {
 	margin-top: 2%;
+	font-size: 70%;
 }
 
 .answer>div {
@@ -206,4 +234,34 @@ Section - Play Again
 	background: rgba(196,76,86, 0.4);
 	box-shadow: rgb(196, 76, 86);
 	color: #DF6035;
+}
+
+
+/*Planetary Prospecting*/
+
+
+
+section>div {
+	display: inline-block;
+	width: 70%;
+	/* width: 100%; */
+	/* float: left; */
+	background: rgba(0,0,0,0.8);
+	border: 0px solid black;
+	border-radius: 65%;
+	padding: 12%;
+	left: -75%;
+	position: absolute;
+}
+
+.question p {
+	font-size: 120%;
+	text-align: center;
+	width: 50%;
+	margin-left: 23%;
+}
+
+ul {
+	width: 50%;
+	margin-left: 23%;
 }

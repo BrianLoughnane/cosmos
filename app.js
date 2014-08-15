@@ -1,7 +1,21 @@
 $(document).ready(function(){
 
-$("body").css("background-size", "130%");
-$("body").css("background-position", "-100px -100px");
+$("body")
+.css("background-size", "130%")
+.css("background-position", "-100px -100px");
+
+$(".planet")
+.delay(3000)
+.animate({left:"110%"}, 800, "linear", function() {
+	$(this).css("left", "-20%")
+	}
+);
+
+$(".question")
+.show()
+.delay(4500)
+.animate({left:"15%"}, 800);
+// .css("display", "inline-block");
 
 // =======================================
 // Question Class Constructor
@@ -29,11 +43,8 @@ var quiz = new Array();
 quiz[0] = new Question("This animal has survived all 5 of the most recent mass extinctions on earth", "Alligator", "Shark", "Ant", "Tartigrade", "Amoeba", "Tartigrade", "\"They can make a living anywhere on earth.  In the frigid peaks of the tallest mountains, in the cauldrons of erupting volcanoes, and in the deep ocean vents at the bottom of the sea.\"");
 quiz[1] = new Question("If we scaled the entire timeline of the cosmos to a calendar year (big bang 'til present day), the entire recorded history of human life would be...", "2 months", "22 days", "8 hours", "8 minutes", "14 seconds", "14 seconds", "\"Every person you’ve ever heard of lies right in there. All those kings and battles, migrations and inventions, wars and loves, every thing in the history books happened here in the last 14 seconds of the cosmic calendar\"");
 quiz[2] = new Question("How long does it take light to cross the Milky Way Galaxy?", "100,000 years", "10 years", "1 year", "5 days", "3 hours", "100,000 years", "\"It would take light, the fastest thing there is, 100,000 years\"");
-quiz[3] = new Question("Volcanoes erupt 500 million tons of CO2 into the atmosphere each year.  How much more CO2 than that do humans emit?", "2x as much", "5 times as much", "10 times as much", "20 times as much", "50 times as much", "50 times as much", "\"That's not even 2% of the 30 billion tons of CO2 that our civilization is cracking out every year\"");
-quiz[4] = new Question("Every time you breathe, you're inhaling how many molecules of oxygen?", "10,000", "100,000", "1 million", "100 million", "1 billion", "100 million", "every breath we take, we inhale as many molecules as there are stars in all the galaxies in the visible universe");
-
-console.log(quiz[0].question);
-
+quiz[3] = new Question("Volcanoes erupt 500 million tons of CO2 into the atmosphere each year.  How much more CO2 than that do humans emit?", "2 times as much", "5 times as much", "10 times as much", "20 times as much", "50 times as much", "50 times as much", "\"That's not even 2% of the 30 billion tons of CO2 that our civilization is cracking out every year\"");
+quiz[4] = new Question("Every time you breathe, you're inhaling how many molecules of oxygen?", "10,000", "100,000", "1 million", "100 million", "1 billion", "100 million", "\"every breath we take, we inhale as many molecules as there are stars in all the galaxies in the visible universe\"");
 
 
 // ======================================================
@@ -61,8 +72,9 @@ function newGame() {
 	$(".total").text(quiz.length);
 	$(".score").text(score);
 	$(".quesNum").text(1);
-
+	
 	askQuestion(count);
+
 }
 
 newGame();
@@ -126,7 +138,20 @@ $("section")
 	}
 
 	}
+
+	// $(".planet")
+	// .delay(3000)
+	// .animate(
+	// 	{left:"110%"}, 
+	// 	800, 
+	// 	function() {
+	// 		$(this).css("left", "-20%");
+	// 	};
+	// );
+	
+	
 );
+
 
 
 $("section")
