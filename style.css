@@ -4,8 +4,9 @@
 
 body {
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
-	font-size: 200%;
-	background: url("galaxy.jpg") -10% -10% no-repeat;
+	/*font-size: 200%;*/
+	font-size: 48px;
+	background: url("galaxy.jpg") -10% -10% repeat-y;
 	background-size: 10%;
 	background-color: black;
 	color: #ADF0F8;
@@ -23,16 +24,30 @@ Header
 */
 
 header {
-	background: url("cosmos.png") 0px 0px no-repeat;
-	background-size: contain;
-	font-size: 120%;
+	/*background: url("cosmos.png") 0px 0px no-repeat;*/
+	/*background-size: contain;*/
+	/*font-size: 120%;*/
+	font-size: 28.8px;
 	color: #ADF0F8;
+	text-align: center;
 }
+
+header img {
+	border: 1px solid black;
+	width: 20%;
+	margin-top: 1%;
+	/*float: left;*/
+	display: inline-block;
+	vertical-align: top;
+}
+
+
 
 header div {
 	display: inline-block;
-	float: right;
-	margin: 3% 5%;
+	vertical-align: middle;
+	/*float: left;*/
+	margin: 3% 4%;
 }
 
 header div:first-child {
@@ -40,11 +55,13 @@ header div:first-child {
 	margin-right: 6%;
 }
 
-header div:nth-child(3) {
-	font-size: 180%;
+header div:nth-child(2) {
+	/*font-size: 180%;*/
+	font-size: 43.2px;
 	color: red;
 	font-family: fantasy, futura, serif;
-	margin-top: 1.7%;
+	margin-top: 3%;
+	margin-bottom: 3%;
 }
 
 
@@ -110,6 +127,7 @@ ul {
 
 .question p {
 	font-size: 120%;
+	font-size: 28.8px;
 	text-align: center;
 	width: 50%;
 	margin-left: 23%;
@@ -118,6 +136,7 @@ ul {
 li {
 	text-decoration: none;
 	font-size: 150%;
+	font-size: 36px;
 	padding-left: 25%;
 	background: url("cosmos.jpg") no-repeat;
 	background-size: 20%;
@@ -136,12 +155,14 @@ Section - Answer
 
 .answer {
 	font-size: 150%;
+	font-size: 36px;
 }
 
 .answer h1 {
 	text-align: center;
 	padding: 5% 0%;
 	font-size: 200%;
+	font-size: 48px;
 	margin-top: 0%;
 }
 
@@ -154,6 +175,7 @@ Section - Answer
 .answer p {
 	margin-top: 2%;
 	font-size: 70%;
+	font-size: 16.8px;
 }
 
 .answer>div {
@@ -192,10 +214,12 @@ Section - Play Again
 
 .playAgain h1 {
 	font-size: 300%;
+	font-size: 72px;
 }
 
 .playAgain p {
 	font-size: 200%;
+	font-size: 48px;
 }
 
 .playAgainButton {
@@ -206,6 +230,7 @@ Section - Play Again
 	border-radius: 21px;
 	color: white;
 	font-size: 200%;
+	font-size: 48px;
 }
 
 .playAgainButton:hover {
@@ -219,8 +244,71 @@ Section - Play Again
 }
 
 
+/*
+============================================
+Media Queries
+============================================
+*/
 
+@media(max-width: 480px) {
+	header img, header div, header div:first-child, header div:nth-child(2) {
+		width: 100%;
+		margin: 0%;
+		text-align: center;
+		font-size: 31.2px;
+		font-size: 20px;
+	}
 
+	.answer {
+		left: -200%;
+	}
 
+	.question p, .question ul, .question li {
+		margin: 5% auto;
+		padding: 0px;
+		font-size: 12px;
+		border: none;
+		border-radius: 0px;
+		text-align: center;
+	}
+
+}
+
+@media(max-width: 735px) and (min-width: 481px) {
+	header img {
+		display: block;
+		margin: auto;
+		width: 50%;
+	}
+
+	header div:nth-child(2) {
+		display: block;
+	}
+
+	header div {
+		/*font-size: 130%;*/
+		font-size: 31.2px;
+	}
+
+	.question p, .question ul, .question li {
+		margin: 5% auto;
+		padding: 0px;
+		font-size: 22px;
+		border: none;
+		border-radius: 0px;
+		text-align: center;
+	}
+
+}
+
+@media(max-width: 1203px) and (min-width: 736px) {
+	header img {
+		display: block;
+		margin: auto;
+		width: 40%;
+	}
+	
+	
+}
 
 
